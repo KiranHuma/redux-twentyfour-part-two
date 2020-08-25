@@ -6,6 +6,7 @@ import {
   incrementByAmount,
   incrementAsync,
   selectCount,
+  reset,
 } from './counterSlice';
 import styles from './Counter.module.css';
 
@@ -24,6 +25,7 @@ export function Counter() {
         >
           +
         </button>
+       
         <span className={styles.value}>{count}</span>
         <button
           className={styles.button}
@@ -31,6 +33,13 @@ export function Counter() {
           onClick={() => dispatch(decrement())}
         >
           -
+        </button>
+        <button
+          className={styles.button}
+          aria-label="Reset value"
+          onClick={() => dispatch(reset())}
+        >
+         Reset
         </button>
       </div>
       <div className={styles.row}>
